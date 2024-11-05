@@ -1,0 +1,10 @@
+# Git - gitattributes Documentation:
+# https://www.git-scm.com/docs/gitattributes
+# https://git-scm.com/book/en/v2/Customizing-Git-Git-Configuration#_core_autocrlf
+
+[attr]binary -diff -merge -text
+*.go        text working-tree-encoding=UTF-8 eol=lf
+*.md        text working-tree-encoding=UTF-8
+*.mod       text working-tree-encoding=UTF-8 eol=lf
+*.sum       text working-tree-encoding=UTF-8 eol=lf
+*.toml      text working-tree-encoding=UTF-8 eol=lf

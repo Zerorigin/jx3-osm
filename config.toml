@@ -1,0 +1,7 @@
+# servers = ['斗转星移']
+# servers = ['武林同庆', '斗转星移', '绝代天骄', '长安城']
+servers = ['斗转星移', '绝代天骄']
+tz = 'Asia/Shanghai'
+useracct = 'your_xiaomi_account'
+password = 'your_account_password'
+xiaoaisn = 'your_xiaoai_serial_number'
