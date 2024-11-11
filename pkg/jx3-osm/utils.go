@@ -3,6 +3,8 @@ package jx3osm
 import (
 	"log"
 	"os"
+	"time"
+	_ "time/tzdata"
 )
 
 // 获取需要监控的服务器列表
@@ -41,6 +43,7 @@ func init_jx3_osm_configs() {
 	}
 
 	// 监听配置文件变化，当配置文件发生变更时，重新读取并应用新值
-	_GLO_VIPER.WatchConfig()     // 仅当未配置环境变量时生效
-	os.Setenv("TZ", GLO_CONF.TZ) // 设置时区变量
+	_GLO_VIPER.WatchConfig()                       // 仅当未配置环境变量时生效
+	os.Setenv("TZ", GLO_CONF.TZ)                   // 设置时区变量
+	time.Local, _ = time.LoadLocation(GLO_CONF.TZ) // 应用时区设置
 }

@@ -7,5 +7,5 @@ import (
 )
 
 func init() {
-	time.LoadLocation(jx3osm.GLO_CONF.TZ) // 设置全局时区
+	time.Local, _ = time.LoadLocation(jx3osm.GLO_CONF.TZ) // 设置全局时区
 }

@@ -4,6 +4,7 @@ import (
 	"log"
 	"os"
 	"time"
+	_ "time/tzdata"
 
 	"github.com/fsnotify/fsnotify"
 	"github.com/spf13/viper"
@@ -31,7 +32,7 @@ func init() {
 
 		// 重新配置全局时区
 		os.Setenv("TZ", GLO_CONF.TZ)
-		time.LoadLocation(GLO_CONF.TZ)
+		time.Local, _ = time.LoadLocation(GLO_CONF.TZ)
 
 		// 重新创建 ServerMaps 映射表
 		GLO_SERVER_MAPS = &ServerMaps{}
