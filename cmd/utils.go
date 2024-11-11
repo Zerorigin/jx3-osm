@@ -32,7 +32,7 @@ func Execute() {
 	// 服务运行状态下的端口健康监控检查
 	_, _ = s.NewJob(
 		gocron.CronJob(
-			fmt.Sprintf("%d 6-8/1 * * *", 35+_GLO_RAND.Intn(25)),
+			fmt.Sprintf("%d 7-9/1 * * *", 35+_GLO_RAND.Intn(25)),
 			false, // without Seconds.
 		),
 		gocron.NewTask(func() { healthCheckWithinPortOpened() }),
