@@ -48,7 +48,8 @@ func (s ServersState) InitServersStates() {
 		} else {
 			zsrv := smaps[srv].ServZone
 			if state, ok := GLO_MAIN_SRV_STATES[zsrv]; ok {
-				s[srv] = state // 遵从主服务器的状态
+				s[srv] = !state // 对主服务器状态取反
+				// 以便新增的子服务器能马上通知
 			} else {
 				s[srv] = default_state
 			}
