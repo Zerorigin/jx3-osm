@@ -33,7 +33,7 @@ func Execute() {
 	_, _ = s.NewJob(
 		gocron.CronJob(
 			// "*/5 * 10-21 * * *", true, // with Seconds. - for dev testing
-			fmt.Sprintf("45-59/1 7-9/1 * * *"), false // without Seconds.
+			"45-59/1 7-9/1 * * *", false, // without Seconds.
 		),
 		gocron.NewTask(func() { healthCheckWithinPortOpened() }),
 	)
